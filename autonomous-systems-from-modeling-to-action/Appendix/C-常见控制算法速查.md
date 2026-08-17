@@ -2,6 +2,15 @@
 
 [返回目录](../SUMMARY.md)
 
+**小节导航**
+
+- [C.1 PID](#appc-sec1)
+- [C.2 LQR](#appc-sec2)
+- [C.3 卡尔曼滤波（Kalman Filter）](#appc-sec3)
+- [C.4 MPC](#appc-sec4)
+- [C.5 iLQR](#appc-sec5)
+- [C.6 DDP](#appc-sec6)
+
 <a id="appc-sec1"></a>
 ## C.1 PID
 

@@ -2,6 +2,23 @@
 
 [← 第25章](25-经典控制.md) · [目录](../SUMMARY.md) · [第27章 →](27-状态空间控制.md)
 
+**小节导航**
+
+- [26.1 比例项（Proportional）](#ch26-sec1)
+- [26.2 积分项（Integral）](#ch26-sec2)
+- [26.3 微分项（Derivative）](#ch26-sec3)
+- [26.4 PID 的误差动力学直觉](#ch26-sec4)
+- [26.5 连续 PID（Continuous PID）](#ch26-sec5)
+- [26.6 离散 PID（Discrete PID）](#ch26-sec6)
+- [26.7 微分滤波（Derivative Filtering）](#ch26-sec7)
+- [26.8 积分饱和（Integral Windup）](#ch26-sec8)
+- [26.9 抗积分饱和（Anti-Windup）](#ch26-sec9)
+- [26.10 给定值加权（Setpoint Weighting）](#ch26-sec10)
+- [26.11 二自由度 PID（Two-Degree-of-Freedom PID, 2-DOF PID）](#ch26-sec11)
+- [26.12 串级 PID（Cascaded PID）](#ch26-sec12)
+- [26.13 前馈 + PID（Feedforward + PID）](#ch26-sec13)
+- [26.14 增益调度（Gain Scheduling）](#ch26-sec14)
+
 > 本章属于 **第五篇 控制（Control）**。机械臂作为贯穿实例，用于连接理论、代码、仿真与真实硬件。
 
 <a id="ch26-sec1"></a>

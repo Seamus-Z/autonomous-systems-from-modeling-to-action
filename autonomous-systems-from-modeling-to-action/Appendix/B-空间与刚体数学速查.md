@@ -2,6 +2,17 @@
 
 [返回目录](../SUMMARY.md)
 
+**小节导航**
+
+- [B.1 旋转矩阵（Rotation Matrix）](#appb-sec1)
+- [B.2 四元数（Quaternion）](#appb-sec2)
+- [B.3 SO(3)](#appb-sec3)
+- [B.4 SE(3)](#appb-sec4)
+- [B.5 运动旋量（Twist）](#appb-sec5)
+- [B.6 力旋量（Wrench）](#appb-sec6)
+- [B.7 伴随变换（Adjoint）](#appb-sec7)
+- [B.8 指数映射（Exponential Map）](#appb-sec8)
+
 <a id="appb-sec1"></a>
 ## B.1 旋转矩阵（Rotation Matrix）
 

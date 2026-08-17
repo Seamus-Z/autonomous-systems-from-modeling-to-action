@@ -2,6 +2,14 @@
 
 [返回目录](../SUMMARY.md)
 
+**小节导航**
+
+- [A.1 线性代数（Linear Algebra）](#appa-sec1)
+- [A.2 微积分（Calculus）](#appa-sec2)
+- [A.3 微分方程（Differential Equations）](#appa-sec3)
+- [A.4 概率论（Probability）](#appa-sec4)
+- [A.5 优化（Optimization）](#appa-sec5)
+
 <a id="appa-sec1"></a>
 ## A.1 线性代数（Linear Algebra）
 

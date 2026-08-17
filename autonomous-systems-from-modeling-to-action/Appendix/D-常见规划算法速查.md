@@ -2,6 +2,14 @@
 
 [返回目录](../SUMMARY.md)
 
+**小节导航**
+
+- [D.1 A*](#appd-sec1)
+- [D.2 PRM](#appd-sec2)
+- [D.3 RRT](#appd-sec3)
+- [D.4 RRT*](#appd-sec4)
+- [D.5 轨迹优化（Trajectory Optimization）](#appd-sec5)
+
 <a id="appd-sec1"></a>
 ## D.1 A*
 
