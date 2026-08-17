@@ -28,4 +28,4 @@
 
 ## 目录
 
-完整的章节目录见 [SUMMARY.md](./SUMMARY.md)。
+完整的章节目录见 [SUMMARY.md](./autonomous-systems-from-modeling-to-action/SUMMARY.md)。
