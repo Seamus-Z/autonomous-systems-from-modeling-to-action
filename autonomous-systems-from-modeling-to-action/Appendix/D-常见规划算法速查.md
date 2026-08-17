@@ -34,3 +34,7 @@
 ## D.5 轨迹优化（Trajectory Optimization）
 
 > TODO
+
+---
+
+[← 附录 C](C-常见控制算法速查.md) · [返回目录](../SUMMARY.md) · [附录 E →](E-软件工具链.md)

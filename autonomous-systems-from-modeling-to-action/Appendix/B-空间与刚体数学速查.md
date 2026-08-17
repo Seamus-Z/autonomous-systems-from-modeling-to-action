@@ -52,3 +52,7 @@
 ## B.8 指数映射（Exponential Map）
 
 > TODO
+
+---
+
+[← 附录 A](A-数学基础速查.md) · [返回目录](../SUMMARY.md) · [附录 C →](C-常见控制算法速查.md)
