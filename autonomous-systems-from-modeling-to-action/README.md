@@ -5,7 +5,7 @@
 
 Rather than organizing knowledge around isolated algorithms, the book follows the functional structure of a complete autonomous system:
 
-**Modeling → Estimation → Planning → Control → Execution**
+**World → Model → State Space → Analysis → Estimation → Planning → Control → Execution**
 
 **Learning** can improve each layer, while **Feedback** closes the loop between computation and the physical world.
 
