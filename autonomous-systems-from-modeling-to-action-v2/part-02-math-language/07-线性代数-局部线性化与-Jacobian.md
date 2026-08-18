@@ -70,7 +70,7 @@ $$
 A(\alpha x_1+\beta x_2)=\alpha Ax_1+\beta Ax_2.
 $$
 
-矩阵乘法表示映射的复合：若 $z=Bx$、$y=Az$，则 $y=ABx$。转置 $A^T$ 则与内积的转移有关，因为
+矩阵乘法表示映射的复合：若 $z=Bx$ 、 $y=Az$ ，则 $y=ABx$ 。转置 $A^T$ 则与内积的转移有关，因为
 
 $$
 y^TAx=(A^Ty)^Tx.
@@ -84,7 +84,7 @@ $$
 \dot x=Ax+Bu,\qquad y=Cx+Du,
 $$
 
-若 $x\in\mathbb R^n$、$u\in\mathbb R^p$、$y\in\mathbb R^m$，则
+若 $x\in\mathbb R^n$ 、 $u\in\mathbb R^p$ 、 $y\in\mathbb R^m$ ，则
 
 $$
 A\in\mathbb R^{n\times n},\quad
@@ -128,15 +128,15 @@ $$
 \dot p=J_p(q)\dot q,
 $$
 
-其中 $J_p(q)\in\mathbb R^{2\times2}$ 是位置 Jacobian。若 $\operatorname{rank}(J_p)=2$，任意足够小的平面末端速度都可由某个关节速度产生；若秩下降为 $1$，机器人在该构型只能沿一个瞬时方向运动，这就是运动学奇异性。此时直接求逆 $J_p^{-1}$ 会不存在或数值极不稳定。
+其中 $J_p(q)\in\mathbb R^{2\times2}$ 是位置 Jacobian。若 $\operatorname{rank}(J_p)=2$ ，任意足够小的平面末端速度都可由某个关节速度产生；若秩下降为 $1$ ，机器人在该构型只能沿一个瞬时方向运动，这就是运动学奇异性。此时直接求逆 $J_p^{-1}$ 会不存在或数值极不稳定。
 
-对于自由度多于任务维度的冗余机器人，$J\in\mathbb R^{m\times n}$ 且 $n>m$，通常存在非零零空间。关节速度可写为
+对于自由度多于任务维度的冗余机器人， $J\in\mathbb R^{m\times n}$ 且 $n>m$ ，通常存在非零零空间。关节速度可写为
 
 $$
 \dot q=J^\dagger \dot p+\left(I-J^\dagger J\right)z,
 $$
 
-其中 $J^\dagger$ 为 Moore–Penrose 伪逆，$z\in\mathbb R^n$ 是任意向量。第一项完成主要末端任务，第二项位于 $\mathcal N(J)$ 中，可用于避开关节限位、降低能耗或远离奇异构型。
+其中 $J^\dagger$ 为 Moore–Penrose 伪逆， $z\in\mathbb R^n$ 是任意向量。第一项完成主要末端任务，第二项位于 $\mathcal N(J)$ 中，可用于避开关节限位、降低能耗或远离奇异构型。
 
 工程上不能把“满秩”和“条件良好”等同起来。矩阵即使理论上满秩，也可能有很小的奇异值，使逆映射放大噪声。奇异值分解
 
@@ -149,13 +149,13 @@ $$
 <a id="ch7-sec3"></a>
 ## 7.3 特征值与特征向量
 
-对方阵 $A\in\mathbb R^{n\times n}$，若存在非零向量 $v\in\mathbb C^n$ 和标量 $\lambda\in\mathbb C$，满足
+对方阵 $A\in\mathbb R^{n\times n}$ ，若存在非零向量 $v\in\mathbb C^n$ 和标量 $\lambda\in\mathbb C$ ，满足
 
 $$
 Av=\lambda v,
 $$
 
-则 $\lambda$ 是特征值（eigenvalue），$v$ 是对应的右特征向量（eigenvector）。特征值由特征方程
+则 $\lambda$ 是特征值（eigenvalue）， $v$ 是对应的右特征向量（eigenvector）。特征值由特征方程
 
 $$
 \det(\lambda I-A)=0
@@ -175,15 +175,15 @@ $$
 x(t)=e^{At}x(0).
 $$
 
-若 $A$ 可对角化为 $A=V\Lambda V^{-1}$，则
+若 $A$ 可对角化为 $A=V\Lambda V^{-1}$ ，则
 
 $$
 e^{At}=Ve^{\Lambda t}V^{-1}.
 $$
 
-沿特征向量 $v_i$ 的状态分量按 $e^{\lambda_i t}$ 演化。因而 $\operatorname{Re}(\lambda_i)<0$ 对应指数衰减，$\operatorname{Re}(\lambda_i)>0$ 对应指数增长，非零虚部对应振荡。离散系统 $x_{k+1}=Ax_k$ 中，相应分量按 $\lambda_i^k$ 演化，渐近衰减要求 $|\lambda_i|<1$。
+沿特征向量 $v_i$ 的状态分量按 $e^{\lambda_i t}$ 演化。因而 $\operatorname{Re}(\lambda_i)<0$ 对应指数衰减， $\operatorname{Re}(\lambda_i)>0$ 对应指数增长，非零虚部对应振荡。离散系统 $x_{k+1}=Ax_k$ 中，相应分量按 $\lambda_i^k$ 演化，渐近衰减要求 $|\lambda_i|<1$ 。
 
-特征值并不总能完整描述瞬态行为。若矩阵不可对角化，需要 Jordan 形式，解中会出现 $t^re^{\lambda t}$ 一类项；若 $A$ 是非正规矩阵，即 $A^TA\neq AA^T$，即使所有特征值都稳定，不同方向的非正交叠加也可能产生显著瞬态放大。因此工程分析中常把特征值与矩阵指数、奇异值、条件数和扰动敏感性结合使用。
+特征值并不总能完整描述瞬态行为。若矩阵不可对角化，需要 Jordan 形式，解中会出现 $t^re^{\lambda t}$ 一类项；若 $A$ 是非正规矩阵，即 $A^TA\neq AA^T$ ，即使所有特征值都稳定，不同方向的非正交叠加也可能产生显著瞬态放大。因此工程分析中常把特征值与矩阵指数、奇异值、条件数和扰动敏感性结合使用。
 
 <a id="ch7-sec4"></a>
 ## 7.4 模态（Mode）
@@ -200,7 +200,7 @@ $$
 x(t)=\sum_{i=1}^n c_i e^{\lambda_i t}v_i.
 $$
 
-每一项 $c_i e^{\lambda_i t}v_i$ 可视为一个模态：$v_i$ 描述状态各分量如何共同参与，$\lambda_i$ 描述该组合随时间如何衰减、增长或振荡。对于共轭特征值
+每一项 $c_i e^{\lambda_i t}v_i$ 可视为一个模态： $v_i$ 描述状态各分量如何共同参与， $\lambda_i$ 描述该组合随时间如何衰减、增长或振荡。对于共轭特征值
 
 $$
 \lambda_{1,2}=-\sigma\pm j\omega,
@@ -215,13 +215,13 @@ $$
 <a id="ch7-sec5"></a>
 ## 7.5 正定矩阵与二次型
 
-对实对称矩阵 $P=P^T\in\mathbb R^{n\times n}$，若对任意非零 $x\in\mathbb R^n$ 都有
+对实对称矩阵 $P=P^T\in\mathbb R^{n\times n}$ ，若对任意非零 $x\in\mathbb R^n$ 都有
 
 $$
 x^TPx>0,
 $$
 
-则称 $P$ 为正定矩阵（positive definite matrix），记为 $P\succ0$。若仅有 $x^TPx\ge 0$，则称其半正定，记为 $P\succeq0$。对称矩阵正定等价于所有特征值均为正，也等价于存在可逆矩阵 $L$ 使
+则称 $P$ 为正定矩阵（positive definite matrix），记为 $P\succ0$ 。若仅有 $x^TPx\ge 0$ ，则称其半正定，记为 $P\succeq0$ 。对称矩阵正定等价于所有特征值均为正，也等价于存在可逆矩阵 $L$ 使
 
 $$
 P=L^TL.
@@ -235,7 +235,7 @@ $$
 V(x)=x^TPx
 $$
 
-定义了椭球形的等值面。若 $P\succ0$，则
+定义了椭球形的等值面。若 $P\succ0$ ，则
 
 $$
 \|x\|_P=\sqrt{x^TPx}
@@ -259,7 +259,7 @@ J=\int_0^T
 \right)dt,
 $$
 
-其中 $Q\in\mathbb R^{4\times4}$ 通常满足 $Q\succeq0$，$R\in\mathbb R^{2\times2}$ 满足 $R\succ0$。$Q$ 惩罚位置和速度偏差，$R$ 惩罚控制作用。权重必须结合单位和允许误差选择，例如可用典型尺度 $s_i$ 设置对角权重 $Q_{ii}\propto 1/s_i^2$，避免弧度、弧度每秒和牛顿米之间的数值尺度任意主导优化结果。
+其中 $Q\in\mathbb R^{4\times4}$ 通常满足 $Q\succeq0$ ， $R\in\mathbb R^{2\times2}$ 满足 $R\succ0$ 。 $Q$ 惩罚位置和速度偏差， $R$ 惩罚控制作用。权重必须结合单位和允许误差选择，例如可用典型尺度 $s_i$ 设置对角权重 $Q_{ii}\propto 1/s_i^2$ ，避免弧度、弧度每秒和牛顿米之间的数值尺度任意主导优化结果。
 
 正定二次型常被解释为能量或距离，但这种解释需要依据。任意 $P\succ0$ 都可构造数学上的广义能量，却未必等于真实机械能；任意二次代价也不自动保证非线性系统的全局稳定。它们首先提供的是局部结构良好、易于计算的度量。
 
@@ -299,7 +299,7 @@ a\sin q_{1,0}
 +a\cos q_{1,0}\delta q_1.
 $$
 
-当 $q_{1,0}=0$ 时，局部斜率为 $a$；当 $q_{1,0}=\pi/2$ 时，一阶斜率为零，此时二阶项可能成为主要误差来源。同一个非线性函数在不同位置附近会产生不同的线性模型。
+当 $q_{1,0}=0$ 时，局部斜率为 $a$ ；当 $q_{1,0}=\pi/2$ 时，一阶斜率为零，此时二阶项可能成为主要误差来源。同一个非线性函数在不同位置附近会产生不同的线性模型。
 
 局部近似的有效范围取决于高阶导数、扰动方向和允许误差，不存在对所有问题统一适用的“足够小”。工程上应通过余项界、仿真比较或在线残差检查验证线性化范围。尤其要避免把局部正确误读为全局正确：线性化模型通常不能跨越大角度运动、碰撞切换、饱和边界或接触模式变化。
 
@@ -325,11 +325,11 @@ $$
 \bar y=h(\bar x,\bar u).
 $$
 
-工作点可以是静止构型，也可以是正在运动的某个瞬时状态，因此工作点不必满足 $f(\bar x,\bar u)=0$。
+工作点可以是静止构型，也可以是正在运动的某个瞬时状态，因此工作点不必满足 $f(\bar x,\bar u)=0$ 。
 
 在分拣任务中，机械臂可能频繁经过某个拾取姿态。若该姿态附近承担精确视觉伺服，可以把对应的关节角、关节速度和力矩选为工作点。选择工作点的工程意义在于：模型精度和控制性能应优先保证在系统实际运行最频繁、风险最高或精度要求最高的区域，而不是抽象地追求全状态空间内同等准确。
 
-工作点应包含足以使名义运动满足模型的信息。仅指定 $\bar x$ 而忽略 $\bar u$，一般无法确定线性化模型；若系统显式依赖时间，还应记录 $\bar t$。对于周期运动、轨迹跟踪或速度保持任务，单一固定工作点往往不够，需要沿名义轨迹不断更新工作点。
+工作点应包含足以使名义运动满足模型的信息。仅指定 $\bar x$ 而忽略 $\bar u$ ，一般无法确定线性化模型；若系统显式依赖时间，还应记录 $\bar t$ 。对于周期运动、轨迹跟踪或速度保持任务，单一固定工作点往往不够，需要沿名义轨迹不断更新工作点。
 
 <a id="ch7-sec8"></a>
 ## 7.8 平衡点（Equilibrium Point）
@@ -348,7 +348,7 @@ $$
 M(q)\ddot q+C(q,\dot q)\dot q+g(q)=\tau.
 $$
 
-若希望机器人静止在 $q=q_e$，则 $\dot q_e=0$、$\ddot q_e=0$，平衡输入必须满足
+若希望机器人静止在 $q=q_e$ ，则 $\dot q_e=0$ 、 $\ddot q_e=0$ ，平衡输入必须满足
 
 $$
 \tau_e=g(q_e).
@@ -369,7 +369,7 @@ $$
 \delta y=y-\bar y.
 $$
 
-它们描述实际量相对名义量的偏差。若 $\bar x$ 为常数，则 $\delta\dot x=\dot x$；若 $\bar x(t)$ 是随时间变化的轨迹，则
+它们描述实际量相对名义量的偏差。若 $\bar x$ 为常数，则 $\delta\dot x=\dot x$ ；若 $\bar x(t)$ 是随时间变化的轨迹，则
 
 $$
 \delta\dot x=\dot x-\dot{\bar x}.
@@ -391,7 +391,7 @@ $$
 u=\bar u+\delta u.
 $$
 
-在机械臂静止保持任务中，$\bar u=g(q_e)$ 是重力补偿，$\delta u$ 才是抑制位置与速度偏差的反馈力矩。
+在机械臂静止保持任务中， $\bar u=g(q_e)$ 是重力补偿， $\delta u$ 才是抑制位置与速度偏差的反馈力矩。
 
 “小扰动”不是一个固定数值阈值，而是相对于局部曲率、约束裕度和性能要求而言。若关节角误差虽小，却使机械臂靠近奇异构型或碰撞边界，一阶模型仍可能迅速失效。工程实现中应明确扰动允许域，并在超出该域时重新线性化、切换模型或采用非线性方法。
 
@@ -409,7 +409,7 @@ $$
 +O(\|\delta x\|^3),
 $$
 
-其中梯度 $\nabla\phi\in\mathbb R^n$，Hessian 矩阵
+其中梯度 $\nabla\phi\in\mathbb R^n$ ，Hessian 矩阵
 
 $$
 H_\phi=\nabla^2\phi\in\mathbb R^{n\times n}.
@@ -417,7 +417,7 @@ $$
 
 梯度描述一阶变化，Hessian 描述局部曲率。在线性化中保留一阶项；在局部二次优化中，还会保留标量代价的二阶项。
 
-对向量函数 $f:\mathbb R^n\rightarrow\mathbb R^m$，一阶展开为
+对向量函数 $f:\mathbb R^n\rightarrow\mathbb R^m$ ，一阶展开为
 
 $$
 f(\bar x+\delta x)
@@ -426,7 +426,7 @@ f(\bar x)+J_f(\bar x)\delta x
 +O(\|\delta x\|^2),
 $$
 
-其中 $J_f\in\mathbb R^{m\times n}$。若函数同时依赖状态和输入，
+其中 $J_f\in\mathbb R^{m\times n}$ 。若函数同时依赖状态和输入，
 
 $$
 f(\bar x+\delta x,\bar u+\delta u)
@@ -450,7 +450,7 @@ Taylor 展开要求函数在展开点附近具有相应光滑性。摩擦死区�
 <a id="ch7-sec11"></a>
 ## 7.11 Jacobian 矩阵
 
-对可微映射 $f:\mathbb R^n\rightarrow\mathbb R^m$，
+对可微映射 $f:\mathbb R^n\rightarrow\mathbb R^m$ ，
 
 $$
 f(x)=
@@ -502,9 +502,9 @@ l_1\cos q_1+l_2\cos(q_1+q_2)&l_2\cos(q_1+q_2)
 \end{bmatrix}.
 $$
 
-它既给出小位移关系 $\delta p\approx J_p\delta q$，也通过对时间求导给出精确瞬时速度关系 $\dot p=J_p\dot q$。前者是有限增量的一阶近似，后者是在可微轨迹上的瞬时链式法则，二者不应混淆。
+它既给出小位移关系 $\delta p\approx J_p\delta q$ ，也通过对时间求导给出精确瞬时速度关系 $\dot p=J_p\dot q$ 。前者是有限增量的一阶近似，后者是在可微轨迹上的瞬时链式法则，二者不应混淆。
 
-Jacobian 还服从链式法则。若 $y=g(z)$、$z=f(x)$，则
+Jacobian 还服从链式法则。若 $y=g(z)$ 、 $z=f(x)$ ，则
 
 $$
 J_{g\circ f}(x)=J_g(f(x))J_f(x).
@@ -521,7 +521,7 @@ $$
 \dot x=f(x,u),\qquad y=h(x,u),
 $$
 
-其中 $x\in\mathbb R^n$、$u\in\mathbb R^p$、$y\in\mathbb R^m$。在工作点 $(\bar x,\bar u)$ 附近进行一阶展开：
+其中 $x\in\mathbb R^n$ 、 $u\in\mathbb R^p$ 、 $y\in\mathbb R^m$ 。在工作点 $(\bar x,\bar u)$ 附近进行一阶展开：
 
 $$
 \dot x
@@ -557,7 +557,7 @@ $$
 \delta y=C\delta x+D\delta u.
 $$
 
-对于机械臂，令 $v=\dot q$，则一阶状态方程为
+对于机械臂，令 $v=\dot q$ ，则一阶状态方程为
 
 $$
 \dot x=
@@ -568,7 +568,7 @@ M(q)^{-1}\left[\tau-C(q,v)v-g(q)\right]
 =f(x,\tau).
 $$
 
-在静止平衡点 $x_e=[q_e^T,0^T]^T$、$\tau_e=g(q_e)$ 附近，理想无摩擦情况下有结构
+在静止平衡点 $x_e=[q_e^T,0^T]^T$ 、 $\tau_e=g(q_e)$ 附近，理想无摩擦情况下有结构
 
 $$
 A=
@@ -584,7 +584,7 @@ M_e^{-1}
 \end{bmatrix},
 $$
 
-其中 $M_e=M(q_e)$，$K_g=\left.\frac{\partial g}{\partial q}\right|_{q_e}$。若存在黏性阻尼矩阵 $F_v$，则 $A$ 的右下块还包含 $-M_e^{-1}F_v$。该结构表明，质量矩阵决定力矩到加速度的局部映射，重力梯度决定姿态偏差产生的恢复或发散趋势。
+其中 $M_e=M(q_e)$ ， $K_g=\left.\frac{\partial g}{\partial q}\right|_{q_e}$ 。若存在黏性阻尼矩阵 $F_v$ ，则 $A$ 的右下块还包含 $-M_e^{-1}F_v$ 。该结构表明，质量矩阵决定力矩到加速度的局部映射，重力梯度决定姿态偏差产生的恢复或发散趋势。
 
 线性化前后还必须保持连续与离散模型的一致性。若离散系统直接写为
 
@@ -599,19 +599,19 @@ A_k=\frac{\partial F}{\partial x},\qquad
 B_k=\frac{\partial F}{\partial u}.
 $$
 
-若先得到连续矩阵 $A_c,B_c$，在零阶保持假设下应使用
+若先得到连续矩阵 $A_c,B_c$ ，在零阶保持假设下应使用
 
 $$
 A_d=e^{A_c\Delta t},\qquad
 B_d=\int_0^{\Delta t}e^{A_c\tau}B_c\,d\tau,
 $$
 
-而 $A_d\approx I+A_c\Delta t$、$B_d\approx B_c\Delta t$ 只是小采样周期下的近似。
+而 $A_d\approx I+A_c\Delta t$ 、 $B_d\approx B_c\Delta t$ 只是小采样周期下的近似。
 
 <a id="ch7-sec13"></a>
 ## 7.13 MIMO 系统的线性化
 
-多输入多输出系统（multiple-input multiple-output, MIMO）与单输入单输出系统使用完全相同的线性化原理。若 $x\in\mathbb R^n$、$u\in\mathbb R^p$、$y\in\mathbb R^m$，则局部模型仍为
+多输入多输出系统（multiple-input multiple-output, MIMO）与单输入单输出系统使用完全相同的线性化原理。若 $x\in\mathbb R^n$ 、 $u\in\mathbb R^p$ 、 $y\in\mathbb R^m$ ，则局部模型仍为
 
 $$
 \delta\dot x=A\delta x+B\delta u,
@@ -619,7 +619,7 @@ $$
 \delta y=C\delta x+D\delta u,
 $$
 
-只是 $B$ 有 $p$ 列、$C$ 有 $m$ 行，矩阵中的非对角元素显式描述通道耦合。线性化的限制来自局部近似和光滑性，而不是输入输出数量。
+只是 $B$ 有 $p$ 列、 $C$ 有 $m$ 行，矩阵中的非对角元素显式描述通道耦合。线性化的限制来自局部近似和光滑性，而不是输入输出数量。
 
 对二关节机器人，两个力矩同时影响两个关节加速度，因为通常
 
@@ -631,7 +631,7 @@ m_{21}(q)&m_{22}(q)
 \end{bmatrix}
 $$
 
-不是对角矩阵。于是 $\tau_1$ 不只作用于 $\ddot q_1$，$\tau_2$ 也不只作用于 $\ddot q_2$。若相机同时输出末端横纵坐标，则观测矩阵中的关节位置部分为 $J_p(q)$，每个像平面或笛卡尔输出也通常依赖多个关节变量。
+不是对角矩阵。于是 $\tau_1$ 不只作用于 $\ddot q_1$ ， $\tau_2$ 也不只作用于 $\ddot q_2$ 。若相机同时输出末端横纵坐标，则观测矩阵中的关节位置部分为 $J_p(q)$ ，每个像平面或笛卡尔输出也通常依赖多个关节变量。
 
 MIMO 线性化之后仍需检查结构，而不能因为得到矩阵就默认系统“可控制、可观测”。例如某一执行器失效会使 $B$ 的有效方向减少，某一构型下运动学 Jacobian 降秩会使输出对部分状态方向失去一阶敏感性。多通道系统尤其需要结合秩、奇异值和尺度归一化分析，避免把强耦合错误地当作多个独立的标量回路。
 
@@ -697,7 +697,7 @@ $$
 F^T\delta p=\tau^T\delta q
 $$
 
-以及 $\delta p=J_p\delta q$，得到
+以及 $\delta p=J_p\delta q$ ，得到
 
 $$
 \tau=J_p(q)^TF.
@@ -727,7 +727,7 @@ $$
 P_{k+1}^-=A_kP_kA_k^T+Q_k.
 $$
 
-这里 $A_k$ 传播过程扰动方向，$H_k$ 描述观测对状态误差的局部敏感性。若观测 Jacobian 在某方向接近零，传感器在该工作点附近便难以提供该方向的一阶信息。
+这里 $A_k$ 传播过程扰动方向， $H_k$ 描述观测对状态误差的局部敏感性。若观测 Jacobian 在某方向接近零，传感器在该工作点附近便难以提供该方向的一阶信息。
 
 迭代线性二次调节器（iterative linear quadratic regulator, iLQR）沿当前名义轨迹线性化动力学，
 
@@ -751,7 +751,7 @@ r(\delta x)
 f(x+\delta x)-f(x)-J_f(x)\delta x.
 $$
 
-当 $\|\delta x\|\to0$ 且函数可微时，应有 $\|r(\delta x)\|/\|\delta x\|\to0$。这一检查比仅确认“代码能运行”更能发现 Jacobian 的符号、索引和坐标错误。
+当 $\|\delta x\|\to0$ 且函数可微时，应有 $\|r(\delta x)\|/\|\delta x\|\to0$ 。这一检查比仅确认“代码能运行”更能发现 Jacobian 的符号、索引和坐标错误。
 
 ## 本章小结
 
