@@ -159,8 +159,8 @@ G_{k-1}Q_{k-1}G_{k-1}^T.
 ```math
 P=
 \begin{bmatrix}
-\sigma_p^2&\operatorname{cov}(p,v)\\
-\operatorname{cov}(v,p)&\sigma_v^2
+\sigma_p^2&\mathrm{cov}(p,v)\\
+\mathrm{cov}(v,p)&\sigma_v^2
 \end{bmatrix}.
 ```
 
@@ -407,7 +407,7 @@ v\\
 h(x)=
 \begin{bmatrix}
 \sqrt{(\ell_x-p_x)^2+(\ell_y-p_y)^2}\\
-\operatorname{atan2}(\ell_y-p_y,\ell_x-p_x)-\theta
+\mathrm{atan2}(\ell_y-p_y,\ell_x-p_x)-\theta
 \end{bmatrix}.
 ```
 

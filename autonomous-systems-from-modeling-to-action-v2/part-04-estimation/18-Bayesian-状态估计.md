@@ -50,7 +50,7 @@ u_{0:k-1}=\{u_0,u_1,\ldots,u_{k-1}\}.
 估计器真正要构造的是信念分布（belief distribution）：
 
 ```math
-\operatorname{bel}(x_k)
+\mathrm{bel}(x_k)
 \triangleq
 p(x_k\mid z_{1:k},u_{0:k-1}).
 ```
@@ -111,7 +111,7 @@ P_k=\mathbb E\!\left[(X_k-\mu_k)(X_k-\mu_k)^T\right].
 p(x_k\mid z_{1:k-1},u_{0:k-1}),
 ```
 
-表示已经使用历史观测和截至当前的控制输入，但尚未使用新观测 $`z_k`$ 。本章后文也将它记为 $`\overline{\operatorname{bel}}(x_k)`$ 。
+表示已经使用历史观测和截至当前的控制输入，但尚未使用新观测 $`z_k`$ 。本章后文也将它记为 $`\overline{\mathrm{bel}}(x_k)`$ 。
 
 系统启动时需要初始先验
 
@@ -331,11 +331,11 @@ p(x_k\mid x_{k-1},u_{k-1}).
 依据全概率公式，预测分布为
 
 ```math
-\overline{\operatorname{bel}}(x_k)
+\overline{\mathrm{bel}}(x_k)
 =
 \int
 p(x_k\mid x_{k-1},u_{k-1})
-\operatorname{bel}(x_{k-1})
+\mathrm{bel}(x_{k-1})
 \,dx_{k-1}.
 ```
 
@@ -367,14 +367,14 @@ b_{\omega,k} &= b_{\omega,k-1}+w_{b,k-1},
 <a id="ch18-sec9"></a>
 ## 18.9 Correction
 
-校正（correction）使用当前观测缩小或重新塑造预测分布。给定预测先验 $`\overline{\operatorname{bel}}(x_k)`$ 和观测 $`z_k`$ ，
+校正（correction）使用当前观测缩小或重新塑造预测分布。给定预测先验 $`\overline{\mathrm{bel}}(x_k)`$ 和观测 $`z_k`$ ，
 
 ```math
-\operatorname{bel}(x_k)
+\mathrm{bel}(x_k)
 =
 \eta_k\,
 p(z_k\mid x_k)\,
-\overline{\operatorname{bel}}(x_k),
+\overline{\mathrm{bel}}(x_k),
 ```
 
 其中
@@ -384,7 +384,7 @@ p(z_k\mid x_k)\,
 =
 \int
 p(z_k\mid x_k)
-\overline{\operatorname{bel}}(x_k)\,dx_k.
+\overline{\mathrm{bel}}(x_k)\,dx_k.
 ```
 
 预测回答“根据上一状态和运动，机器人现在可能在哪里”，校正回答“在这些候选位置中，哪些能够解释当前传感器数据”。
@@ -411,28 +411,28 @@ p(z_k^{(1:M)}\mid x_k)
 初始化：
 
 ```math
-\operatorname{bel}(x_0)=p(x_0).
+\mathrm{bel}(x_0)=p(x_0).
 ```
 
 对每个时刻 $`k=1,2,\ldots`$ ，先执行预测：
 
 ```math
-\overline{\operatorname{bel}}(x_k)
+\overline{\mathrm{bel}}(x_k)
 =
 \int
 p(x_k\mid x_{k-1},u_{k-1})
-\operatorname{bel}(x_{k-1})
+\mathrm{bel}(x_{k-1})
 \,dx_{k-1},
 ```
 
 再执行校正：
 
 ```math
-\operatorname{bel}(x_k)
+\mathrm{bel}(x_k)
 =
 \eta_k\,
 p(z_k\mid x_k)
-\overline{\operatorname{bel}}(x_k).
+\overline{\mathrm{bel}}(x_k).
 ```
 
 这两个方程构成大多数在线状态估计算法的共同骨架。不同算法并不是在贝叶斯原则上彼此冲突，而是对分布表示和积分计算采用不同近似。例如，有限状态滤波器直接存储离散概率，高斯滤波器存储均值与协方差，粒子滤波器用带权样本近似分布。后续具体算法都应能被放回这两个步骤中理解。
@@ -486,7 +486,7 @@ x_k\mid z_{1:k},u_{0:k-1}
 贝叶斯状态估计把自主系统的认知状态表示为条件概率分布：
 
 ```math
-\operatorname{bel}(x_k)
+\mathrm{bel}(x_k)
 =
 p(x_k\mid z_{1:k},u_{0:k-1}).
 ```

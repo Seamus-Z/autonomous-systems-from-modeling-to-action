@@ -111,13 +111,13 @@ D\in\mathbb R^{m\times p}.
 秩（rank）是值域的维数：
 
 ```math
-\operatorname{rank}(A)=\dim\mathcal R(A).
+\mathrm{rank}(A)=\dim\mathcal R(A).
 ```
 
 由秩—零度定理，
 
 ```math
-\operatorname{rank}(A)+\dim\mathcal N(A)=n.
+\mathrm{rank}(A)+\dim\mathcal N(A)=n.
 ```
 
 因此，秩说明映射能产生多少个独立输出方向，零空间则说明哪些输入方向不会出现在输出中。
@@ -128,7 +128,7 @@ D\in\mathbb R^{m\times p}.
 \dot p=J_p(q)\dot q,
 ```
 
-其中 $`J_p(q)\in\mathbb R^{2\times2}`$ 是位置 Jacobian。若 $`\operatorname{rank}(J_p)=2`$ ，任意足够小的平面末端速度都可由某个关节速度产生；若秩下降为 $`1`$ ，机器人在该构型只能沿一个瞬时方向运动，这就是运动学奇异性。此时直接求逆 $`J_p^{-1}`$ 会不存在或数值极不稳定。
+其中 $`J_p(q)\in\mathbb R^{2\times2}`$ 是位置 Jacobian。若 $`\mathrm{rank}(J_p)=2`$ ，任意足够小的平面末端速度都可由某个关节速度产生；若秩下降为 $`1`$ ，机器人在该构型只能沿一个瞬时方向运动，这就是运动学奇异性。此时直接求逆 $`J_p^{-1}`$ 会不存在或数值极不稳定。
 
 对于自由度多于任务维度的冗余机器人， $`J\in\mathbb R^{m\times n}`$ 且 $`n>m`$ ，通常存在非零零空间。关节速度可写为
 
@@ -181,7 +181,7 @@ x(t)=e^{At}x(0).
 e^{At}=Ve^{\Lambda t}V^{-1}.
 ```
 
-沿特征向量 $`v_i`$ 的状态分量按 $`e^{\lambda_i t}`$ 演化。因而 $`\operatorname{Re}(\lambda_i)<0`$ 对应指数衰减， $`\operatorname{Re}(\lambda_i)>0`$ 对应指数增长，非零虚部对应振荡。离散系统 $`x_{k+1}=Ax_k`$ 中，相应分量按 $`\lambda_i^k`$ 演化，渐近衰减要求 $`|\lambda_i|<1`$ 。
+沿特征向量 $`v_i`$ 的状态分量按 $`e^{\lambda_i t}`$ 演化。因而 $`\mathrm{Re}(\lambda_i)<0`$ 对应指数衰减， $`\mathrm{Re}(\lambda_i)>0`$ 对应指数增长，非零虚部对应振荡。离散系统 $`x_{k+1}=Ax_k`$ 中，相应分量按 $`\lambda_i^k`$ 演化，渐近衰减要求 $`|\lambda_i|<1`$ 。
 
 特征值并不总能完整描述瞬态行为。若矩阵不可对角化，需要 Jordan 形式，解中会出现 $`t^re^{\lambda t}`$ 一类项；若 $`A`$ 是非正规矩阵，即 $`A^TA\neq AA^T`$ ，即使所有特征值都稳定，不同方向的非正交叠加也可能产生显著瞬态放大。因此工程分析中常把特征值与矩阵指数、奇异值、条件数和扰动敏感性结合使用。
 
