@@ -640,7 +640,7 @@
   - [42.12 在线辨识（Online Identification）](./07-Learning/42-系统辨识.md#ch42-sec12)
   - [42.13 面向辨识的实验设计（Experiment Design for Identification）](./07-Learning/42-系统辨识.md#ch42-sec13)
 - [第43章 学习动力学模型（Learned Dynamics）](./07-Learning/43-学习动力学模型.md)
-  - [43.1 从物理模型 f_physics 到学习模型 f_theta](./07-Learning/43-学习动力学模型.md#ch43-sec1)
+  - [43.1 从物理模型 $f_physics$ 到学习模型 $f_theta$](./07-Learning/43-学习动力学模型.md#ch43-sec1)
   - [43.2 监督式动力学学习（Supervised Dynamics Learning）](./07-Learning/43-学习动力学模型.md#ch43-sec2)
   - [43.3 单步预测（One-Step Prediction）](./07-Learning/43-学习动力学模型.md#ch43-sec3)
   - [43.4 多步预测（Multi-Step Prediction）](./07-Learning/43-学习动力学模型.md#ch43-sec4)
