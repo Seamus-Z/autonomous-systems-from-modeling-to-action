@@ -32,6 +32,8 @@ Isaac Sim 由 `./run.sh` 选择 Python 3.10 并施加内存 cgroup，产物统�
 | d04 | [34.14 电机参数](part-07-execution/34-电机与执行器控制.md#exp-d04) | 电流上限、反电动势、母线电压和减速比怎样共同限幅？ | `./run.sh -m m2a.demos.d04_motor_params` |
 | d05 | [20.13 激光、里程计与回环](part-04-estimation/20-多传感器融合与机器人状态估计.md#exp-d05) | 为什么路程几乎正确，闭环位姿仍然错误？ | `./run.sh -m m2a.demos.d05_room_lidar_odom` |
 | d06 | [11.20 机械臂与 TCP 回放](part-03-modeling/11-运动学与微分运动学.md#exp-d06) | 关节、连杆世界位姿与末端轨迹如何同步变化？ | `./run.sh -m m2a.demos.d06_arm_rerun_capture` |
+| l01 | [36 数据驱动建模](part-08-learning/36-数据驱动建模与学习系统.md) | 开环激励能否把 (J,b)/(Ad,Bd) 辨回来？持续激励怎样决定可辨性？ | `python3 -m m2a.demos.l01_system_identification` |
+| l02 | [37 学习控制](part-08-learning/37-从最优决策到学习控制.md) | REINFORCE 回报能否逼近价值迭代最优？基线怎样降方差？ | `python3 -m m2a.demos.l02_policy_gradient` |
 
 完整环境说明、实测表格、Rerun 用法和覆盖边界见 `model-to-action-lab/README.md`。
 
